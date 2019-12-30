@@ -5,4 +5,5 @@
     <string name="master_info">If service is enabled, the screen will be turned off when the proximity sensor is activated.</string>
     <string name="service_notif_title">Proximity service enabled</string>
     <string name="service_notif_text">Tap to stop service</string>
+    <string name="tile_label">Javi service</string>
 </resources>
