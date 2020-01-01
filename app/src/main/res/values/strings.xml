@@ -2,8 +2,10 @@
     <string name="app_name">Javi</string>
     <string name="notification_general_title">General</string>
     <string name="proximity_service">Service</string>
-    <string name="master_info">If service is enabled, the screen will be turned off when the proximity sensor is activated.</string>
-    <string name="service_notif_title">Proximity service enabled</string>
-    <string name="service_notif_text">Tap to stop service</string>
-    <string name="tile_label">Javi service</string>
+    <string name="hypnotic_info">Turns the screen off when the proximity sensor activates</string>
+    <string name="caffeine_info">Keeps screen on</string>
+    <string name="service_notif_title">Javi service enabled</string>
+    <string name="service_notif_text">Tap to open notification settings</string>
+    <string name="hypnotic_label">Hypnotic</string>
+    <string name="caffeine_label">Caffeine</string>
 </resources>

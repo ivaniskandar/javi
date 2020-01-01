@@ -27,13 +27,27 @@
         </activity>
 
         <service android:name=".JaviService" />
-        <service android:name=".JaviQSTileService"
+        <service android:name=".CaffeineQSTileService"
             android:icon="@drawable/ic_javi"
-            android:label="@string/tile_label"
+            android:label="@string/caffeine_label"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE"/>
             </intent-filter>
+            <meta-data
+                android:name="android.service.quicksettings.ACTIVE_TILE"
+                android:value="true" />
+        </service>
+        <service android:name=".HypnoticQSTileService"
+            android:icon="@drawable/ic_hypnotic"
+            android:label="@string/hypnotic_label"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.service.quicksettings.ACTIVE_TILE"
+                android:value="true" />
         </service>
     </application>
 

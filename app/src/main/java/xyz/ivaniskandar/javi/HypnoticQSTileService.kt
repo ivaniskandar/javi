@@ -6,11 +6,11 @@ import android.service.quicksettings.Tile.STATE_INACTIVE
 import android.service.quicksettings.TileService
 import androidx.core.content.ContextCompat
 
-class JaviQSTileService : TileService() {
+class HypnoticQSTileService : TileService() {
     override fun onStartListening() {
         super.onStartListening()
         with(qsTile) {
-            state = if (JaviService.isStarted) {
+            state = if (JaviService.isHypnoticActive) {
                 STATE_ACTIVE
             } else {
                 STATE_INACTIVE
@@ -42,6 +42,7 @@ class JaviQSTileService : TileService() {
                 this,
                 Intent(this, JaviService::class.java).apply {
                     action = ACTION_START_SERVICE
+                    putExtra(EXTRA_SERVICE_TYPE, EXTRA_HYPNOTIC)
                 }
             )
         } else {

@@ -11,13 +11,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        mainSwitch.isChecked = JaviService.isStarted
-        mainSwitch.setOnCheckedChangeListener { _, b ->
+        hypnoticSwitch.setOnCheckedChangeListener { button, b ->
+            if (!button.isPressed) {
+                return@setOnCheckedChangeListener
+            }
             if (b) {
+                caffeineSwitch.isChecked = false
                 ContextCompat.startForegroundService(
                         this,
                         Intent(this, JaviService::class.java).apply {
                             action = ACTION_START_SERVICE
+                            putExtra(EXTRA_SERVICE_TYPE, EXTRA_HYPNOTIC)
                         }
                 )
             } else {
@@ -28,10 +32,33 @@ class MainActivity : AppCompatActivity() {
                 )
             }
         }
+        caffeineSwitch.setOnCheckedChangeListener { button, b ->
+            if (!button.isPressed) {
+                return@setOnCheckedChangeListener
+            }
+            if (b) {
+                hypnoticSwitch.isChecked = false
+                ContextCompat.startForegroundService(
+                    this,
+                    Intent(this, JaviService::class.java).apply {
+                        action = ACTION_START_SERVICE
+                        putExtra(EXTRA_SERVICE_TYPE, EXTRA_CAFFEINE)
+                    }
+                )
+            } else {
+                startService(
+                    Intent(this, JaviService::class.java).apply {
+                        action = ACTION_STOP_SERVICE
+                    }
+                )
+            }
+        }
     }
 
     override fun onResume() {
         super.onResume()
-        mainSwitch.isChecked = JaviService.isStarted
+        hypnoticSwitch.isChecked = JaviService.isHypnoticActive
+        caffeineSwitch.isChecked = JaviService.isCaffeineActive
+
     }
 }

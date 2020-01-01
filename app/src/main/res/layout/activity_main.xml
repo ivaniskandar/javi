@@ -8,10 +8,12 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/controlContainer"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         app:cardCornerRadius="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/details"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,49 +21,87 @@
         app:layout_constraintVertical_chainStyle="packed">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingStart="24dp"
-            android:paddingTop="4dp"
-            android:paddingEnd="18dp"
-            android:paddingBottom="4dp">
+            android:orientation="vertical"
+            android:paddingVertical="8dp">
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="0dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/proximity_service"
-                android:textAppearance="?textAppearanceBody1" />
+                android:orientation="horizontal"
+                android:paddingVertical="8dp"
+                android:paddingStart="24dp"
+                android:paddingEnd="18dp">
 
-            <com.google.android.material.switchmaterial.SwitchMaterial
-                android:id="@+id/mainSwitch"
-                android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/hypnotic_label"
+                        android:textAppearance="?textAppearanceBody1" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/hypnotic_info"
+                        android:textAppearance="?textAppearanceCaption" />
+
+                </LinearLayout>
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/hypnoticSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="42dp" />
+                android:orientation="horizontal"
+                android:paddingVertical="8dp"
+                android:paddingStart="24dp"
+                android:paddingEnd="18dp">
 
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/caffeine_label"
+                        android:textAppearance="?textAppearanceBody1" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/caffeine_info"
+                        android:textAppearance="?textAppearanceCaption" />
+
+                </LinearLayout>
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/caffeineSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp" />
+
+            </LinearLayout>
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
-
-    <TextView
-        android:id="@+id/details"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="8dp"
-        android:justificationMode="inter_word"
-        android:text="@string/master_info"
-        android:textAppearance="?textAppearanceCaption"
-        android:textColor="?android:textColorSecondary"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/controlContainer"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/controlContainer"
-        app:layout_constraintTop_toBottomOf="@+id/controlContainer"
-        app:layout_constraintVertical_chainStyle="packed"
-        tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
